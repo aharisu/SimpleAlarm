@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingLeft="4dip"
+    android:paddingRight="4dip"
+    >
+    
+    <aharisu.Misc.SimpleAlarm.TimeInputView
+    	android:id="@+id_set_alarm_activity/TineInput"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+    	/>
+    	
+    <RelativeLayout android:id="@+id_set_alarm_activity/SelectSound"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_marginTop="4dip"
+    	android:padding="8dip"
+    	android:background="@drawable/number_table_background"
+    	>
+    	
+    	<TextView android:id="@+id_set_alarm_activity/SelectSoundLabel"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_alignParentTop="true"
+    		android:layout_alignParentLeft="true"
+    		android:textSize="25sp"
+    		android:text="アラーム音"
+    		/>
+    		
+    	<TextView android:id="@+id_set_alarm_activity/CurrentSelectedSoundLabel"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_below="@id_set_alarm_activity/SelectSoundLabel"
+    		android:layout_alignParentLeft="true"
+    		android:layout_marginLeft="10dip"
+    		android:textSize="18sp"
+    		android:textColor="#43a4cb"
+    		/>
+    		
+    	<ImageView
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_alignParentTop="true"
+    		android:layout_alignParentRight="true"
+    		android:layout_toLeftOf="@id_set_alarm_activity/SelectSoundLabel"
+    		android:background="#ff0000"
+    		/>
+    </RelativeLayout>
+    
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="4dip"
+		android:orientation="vertical"
+		android:background="@drawable/number_table_background"
+		android:paddingLeft="2dip"
+		android:paddingTop="6dip"
+		android:paddingRight="2dip"
+		android:paddingBottom="10dip"
+		>
+    	<TextView
+    		android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_marginLeft="10dip"
+    		android:text="ボリューム"
+    		android:textSize="25sp"
+    		/>
+    		
+    	<LinearLayout
+    		android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_marginTop="8dip"
+    		android:orientation="horizontal"
+    		android:weightSum="10"
+    		>
+    		
+    		<ImageView
+    			android:layout_width="19px"
+    			android:layout_height="24px"
+    			android:layout_gravity="center_vertical"
+    			android:layout_weight="1"
+    			android:src="@drawable/speaker_off"
+    			android:scaleType="centerInside"
+    			/>
+    			
+    		<SeekBar android:id="@+id_set_alarm_activity/VolumeSeekBar"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:layout_gravity="center_vertical"
+    			android:layout_weight="8"
+    			android:max="9"
+    			/>
+    		
+    		<ImageView
+    			android:layout_width="34px"
+    			android:layout_height="24px"
+    			android:layout_gravity="center_vertical"
+    			android:layout_weight="1"
+    			android:src="@drawable/speaker_on"
+    			android:scaleType="centerInside"
+    			/>
+    			
+    	</LinearLayout>
+    		
+	</LinearLayout>
+    
+    <Button android:id="@+id_set_alarm_activity/OK"
+	   android:layout_width="fill_parent"
+	   android:layout_height="wrap_content"
+	   android:layout_marginTop="15dip"
+	   android:layout_marginLeft="35dip"
+	   android:layout_marginRight="35dip"
+	   android:text="OK"
+	   android:textSize="22sp"
+	   />
+    
+</LinearLayout>
