@@ -10,10 +10,6 @@ package aharisu.Misc.SimpleAlarm;
 public final class R {
     public static final class array {
         public static final int alarm_set=0x7f070000;
-        public static final int snooze_duration_entries=0x7f070001;
-        public static final int snooze_duration_values=0x7f070002;
-        public static final int volume_button_setting_entries=0x7f070003;
-        public static final int volume_button_setting_values=0x7f070004;
     }
     public static final class attr {
     }
@@ -100,64 +96,28 @@ public final class R {
         public static final int in_call_alarm=0x7f050001;
     }
     public static final class string {
-        public static final int add_alarm=0x7f060002;
-        public static final int alarm_alert_alert_silenced=0x7f060013;
-        public static final int alarm_alert_dismiss_text=0x7f060012;
-        public static final int alarm_alert_snooze_set=0x7f060015;
-        public static final int alarm_alert_snooze_text=0x7f060014;
-        public static final int alarm_button_description=0x7f060031;
-        public static final int alarm_in_silent_mode_summary=0x7f060023;
-        public static final int alarm_in_silent_mode_title=0x7f060022;
-        public static final int alarm_list_title=0x7f060001;
-        public static final int alarm_notify_snooze_label=0x7f06002c;
-        public static final int alarm_notify_snooze_text=0x7f06002d;
-        public static final int alarm_notify_text=0x7f06002b;
-        public static final int alarm_repeat=0x7f06000f;
-        public static final int alarm_vibrate=0x7f06000e;
-        public static final int alarm_volume_summary=0x7f060029;
-        public static final int alarm_volume_title=0x7f060028;
-        public static final int alert=0x7f060010;
-        public static final int analog_gadget=0x7f060020;
-        public static final int app_label=0x7f060000;
-        public static final int battery_charging_level=0x7f060037;
-        public static final int clock_instructions=0x7f06001f;
-        public static final int day=0x7f060016;
-        public static final int day_concat=0x7f06001e;
-        public static final int days=0x7f060017;
-        public static final int default_label=0x7f06000c;
-        public static final int delete=0x7f060027;
-        public static final int delete_alarm=0x7f060005;
-        public static final int delete_alarm_confirm=0x7f060008;
-        public static final int desk_clock_button_description=0x7f060036;
-        public static final int disable_alarm=0x7f060007;
-        public static final int done=0x7f060025;
-        public static final int enable_alarm=0x7f060006;
-        public static final int every_day=0x7f06001c;
-        public static final int gallery_button_description=0x7f060032;
-        public static final int hide_clock=0x7f06000a;
-        public static final int home_button_description=0x7f060035;
-        public static final int hour=0x7f060018;
-        public static final int hours=0x7f060019;
-        public static final int label=0x7f06000b;
-        public static final int menu_desk_clock=0x7f060003;
-        public static final int menu_edit_alarm=0x7f060004;
-        public static final int menu_item_dock_settings=0x7f060039;
-        public static final int minute=0x7f06001a;
-        public static final int minutes=0x7f06001b;
-        public static final int music_button_description=0x7f060033;
-        public static final int never=0x7f06001d;
-        public static final int nightmode_button_description=0x7f060034;
-        public static final int revert=0x7f060026;
-        public static final int set_alarm=0x7f06000d;
-        public static final int settings=0x7f060021;
-        public static final int show_clock=0x7f060009;
-        public static final int silent_alarm_summary=0x7f06002a;
-        public static final int snooze_duration_title=0x7f060024;
-        public static final int time=0x7f060011;
-        public static final int volume_button_dialog_title=0x7f06002f;
-        public static final int volume_button_setting_summary=0x7f060030;
-        public static final int volume_button_setting_title=0x7f06002e;
-        public static final int weather_fetch_failure=0x7f060038;
+        public static final int alarm_alert_alert_silenced=0x7f060008;
+        public static final int alarm_alert_dismiss_text=0x7f060007;
+        public static final int alarm_alert_snooze_set=0x7f06000a;
+        public static final int alarm_alert_snooze_text=0x7f060009;
+        public static final int alarm_notify_snooze_text=0x7f060012;
+        public static final int alarm_notify_text=0x7f060011;
+        public static final int alarm_sound=0x7f060005;
+        public static final int common_cancel=0x7f060001;
+        public static final int common_ok=0x7f060000;
+        public static final int create_new_alarm=0x7f060002;
+        public static final int current_select_sound_title_format=0x7f060015;
+        public static final int day=0x7f06000b;
+        public static final int days=0x7f06000c;
+        public static final int default_label=0x7f060004;
+        public static final int delete_alarm=0x7f060003;
+        public static final int hour=0x7f06000d;
+        public static final int hours=0x7f06000e;
+        public static final int minute=0x7f06000f;
+        public static final int minutes=0x7f060010;
+        public static final int pick_sound_tab_my_music=0x7f060014;
+        public static final int pick_sound_tab_sound=0x7f060013;
+        public static final int volume=0x7f060006;
     }
     public static final class style {
         public static final int ButtonStripLeft=0x7f080003;
@@ -173,6 +133,5 @@ public final class R {
     }
     public static final class xml {
         public static final int alarmwidget_info=0x7f040000;
-        public static final int settings=0x7f040001;
     }
 }

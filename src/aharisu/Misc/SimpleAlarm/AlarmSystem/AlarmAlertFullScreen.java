@@ -7,7 +7,7 @@
  *
  *      http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
+ * Unless required by applicable law or to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
@@ -57,9 +57,11 @@ import java.util.TimerTask;
 public class AlarmAlertFullScreen extends Activity {
 
     // These defaults must match the values in res/xml/settings.xml
-    private static final String DEFAULT_SNOOZE = "10";
-    private static final String DEFAULT_VOLUME_BEHAVIOR = "2";
+    private static final int DEFAULT_SNOOZE = 10;  //minutes
+    private static final int DEFAULT_VOLUME_BEHAVIOR = 2;
     protected static final String SCREEN_OFF = "screen_off";
+    
+    private static final int TeleportationInterval = 700; //msec
 
     protected Alarm mAlarm;
     private int mVolumeBehavior;
@@ -94,10 +96,7 @@ public class AlarmAlertFullScreen extends Activity {
 
         mAlarm = getIntent().getParcelableExtra(Alarms.ALARM_INTENT_EXTRA);
 
-        // Get the volume/camera button behavior setting
-        final String vol = PreferenceManager.getDefaultSharedPreferences(this)
-	        .getString(SettingsActivity.KEY_VOLUME_BEHAVIOR, DEFAULT_VOLUME_BEHAVIOR);
-        mVolumeBehavior = Integer.parseInt(vol);
+        mVolumeBehavior = DEFAULT_VOLUME_BEHAVIOR;
 
         requestWindowFeature(android.view.Window.FEATURE_NO_TITLE);
 
@@ -109,7 +108,7 @@ public class AlarmAlertFullScreen extends Activity {
         if (!getIntent().getBooleanExtra(SCREEN_OFF, false)) {
             win.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
                     | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
-            //android 2.2にしかないフラグ(いまいち意味が分かんない)
+            //android 2.2からのフラグ(いまいち意味が分かんない)
                     //| WindowManager.LayoutParams.FLAG_ALLOW_LOCK_WHILE_SCREEN_ON);
         }
 
@@ -155,10 +154,8 @@ public class AlarmAlertFullScreen extends Activity {
             dismiss(false);
             return;
         }
-        final String snooze =
-                PreferenceManager.getDefaultSharedPreferences(this)
-                .getString(SettingsActivity.KEY_ALARM_SNOOZE, DEFAULT_SNOOZE);
-        int snoozeMinutes = Integer.parseInt(snooze);
+        
+        int snoozeMinutes = DEFAULT_SNOOZE;
 
         final long snoozeTime = System.currentTimeMillis() + (1000 * 60 * snoozeMinutes);
         Alarms.saveSnoozeAlert(AlarmAlertFullScreen.this, mAlarm.id, snoozeTime);
@@ -175,8 +172,8 @@ public class AlarmAlertFullScreen extends Activity {
                 PendingIntent.getBroadcast(this, mAlarm.id, cancelSnooze, 0);
         NotificationManager nm = getNotificationManager();
         Notification n = new Notification(R.drawable.stat_notify_alarm,
-                "アラーム", 0);
-        n.setLatestEventInfo(this, "アラーム",
+                getResources().getText(R.string.default_label), 0);
+        n.setLatestEventInfo(this, getResources().getText(R.string.default_label),
                 getString(R.string.alarm_notify_snooze_text,
                     Alarms.formatTime(this, c)), broadcast);
         n.flags |= Notification.FLAG_AUTO_CANCEL
@@ -270,7 +267,7 @@ public class AlarmAlertFullScreen extends Activity {
     				}
     			});
     		}
-    	}, 0, 700);
+    	}, 0, TeleportationInterval);
     }
     
     @Override protected void onStop() {

@@ -40,7 +40,6 @@ import android.widget.ImageView.ScaleType;
 public class SetAlarmActivity extends Activity{
 	private static final int REQUEST_PICK_SOUND = 10;
 	
-	//private TimeInputView _timeInputView;
 	private Uri _soundUri;
 	
 	private Alarm _alarm;

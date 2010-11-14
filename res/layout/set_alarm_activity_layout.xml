@@ -29,7 +29,7 @@
     		android:layout_alignParentTop="true"
     		android:layout_alignParentLeft="true"
     		android:textSize="25sp"
-    		android:text="アラーム音"
+    		android:text="@string/alarm_sound"
     		/>
     		
     	<TextView android:id="@+id_set_alarm_activity/CurrentSelectedSoundLabel"
@@ -67,7 +67,7 @@
     		android:layout_width="fill_parent"
     		android:layout_height="wrap_content"
     		android:layout_marginLeft="10dip"
-    		android:text="ボリューム"
+    		android:text="@string/volume"
     		android:textSize="25sp"
     		/>
     		

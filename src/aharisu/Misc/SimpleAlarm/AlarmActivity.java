@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -176,7 +177,7 @@ public class AlarmActivity extends Activity implements View.OnCreateContextMenuL
     
     @Override public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
     	super.onCreateContextMenu(menu, v, menuInfo);
-		menu.add("削除").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+		menu.add(R.string.delete_alarm).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
 			
 			@Override public boolean onMenuItemClick(MenuItem item) {
 				final AdapterContextMenuInfo info = (AdapterContextMenuInfo)item.getMenuInfo();

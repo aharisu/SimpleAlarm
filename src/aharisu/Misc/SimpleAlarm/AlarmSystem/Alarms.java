@@ -82,8 +82,9 @@ public class Alarms {
     // list of alarms.
     public static final String ALARM_ID = "alarm_id";
 
-    final static String PREF_SNOOZE_ID = "snooze_id";
-    final static String PREF_SNOOZE_TIME = "snooze_time";
+    private final static String PREFERENCES = "shared_prefs";
+    private final static String PREF_SNOOZE_ID = "snooze_id";
+    private final static String PREF_SNOOZE_TIME = "snooze_time";
 
     private final static String DM12 = "E h:mm aa";
     private final static String DM24 = "E k:mm";
@@ -92,8 +93,6 @@ public class Alarms {
     // Shared with DigitalClock
     final static String M24 = "kk:mm";
     
-    private static final String PREFERENCES = "AlarmClock";
-
     /**
      * Creates a new Alarm and fills in the given alarm's id.
      */
@@ -163,7 +162,7 @@ public class Alarms {
         // If this alarm fires before the next snooze, clear the snooze to
         // enable this alarm.
         SharedPreferences prefs = context.getSharedPreferences(PREFERENCES, 0);
-        long snoozeTime = prefs.getLong(PREF_SNOOZE_TIME, 0);
+        long snoozeTime =  prefs.getLong(PREF_SNOOZE_TIME, 0);
         if (alarmTime < snoozeTime) {
             clearSnoozePreference(context, prefs);
         }

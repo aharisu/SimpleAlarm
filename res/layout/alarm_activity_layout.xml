@@ -14,7 +14,7 @@
     	android:layout_marginLeft="35dip"
     	android:layout_marginRight="35dip"
     	android:textSize="20sp"
-    	android:text="新規作成"
+    	android:text="@string/create_new_alarm"
     	/>
     	
     <ListView android:id="@+id_alarm_activity/AlarmList"

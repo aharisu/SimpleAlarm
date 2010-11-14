@@ -33,8 +33,6 @@ public class PickSoundActivity extends Activity{
 	private static final int KindRingtone = 1;
 	private static final int KindMyMusic = 2;
 	
-	private static final String ShowSelectedSoundTitleFormat = "選択アラーム#%s";
-	
 	private static class SoundData {
 		public final Uri uri;
 		public final String title;
@@ -123,16 +121,16 @@ public class PickSoundActivity extends Activity{
 		tabHost.setup();
 		
 		((TextView)findViewById(R.id_pick_sound_activity.SelectedAlarm)).setText(
-				String.format(ShowSelectedSoundTitleFormat, 
+				String.format(context.getResources().getString(R.string.current_select_sound_title_format), 
 						_curSelectedData == null ? "" : _curSelectedData.title));
 				
 		TabSpec pickerRingtone = tabHost.newTabSpec("ringtone");
-		pickerRingtone.setIndicator("サウンド");
+		pickerRingtone.setIndicator(getResources().getText(R.string.pick_sound_tab_sound));
 		pickerRingtone.setContent(createRingtoneListView());
 		tabHost.addTab(pickerRingtone);
 		
 		TabSpec pickerMusic = tabHost.newTabSpec("music");
-		pickerMusic.setIndicator("MyMusic");
+		pickerMusic.setIndicator(getResources().getText(R.string.pick_sound_tab_my_music));
 		pickerMusic.setContent(createMuiscListView());
 		tabHost.addTab(pickerMusic);
 		
@@ -173,7 +171,8 @@ public class PickSoundActivity extends Activity{
 		_curSelectedData = data;
 		
 		((TextView)findViewById(R.id_pick_sound_activity.SelectedAlarm)).setText(
-			String.format(ShowSelectedSoundTitleFormat, data.title));
+			String.format(getResources().getString(R.string.current_select_sound_title_format),
+					data.title));
 	}
 	
 	private SoundData[] getRingtoneSoundDatas() {

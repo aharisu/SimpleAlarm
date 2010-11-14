@@ -51,14 +51,14 @@
     		android:layout_width="200px"
     		android:layout_height="70px"
     		android:layout_marginRight="10dip"
-    		android:text="OK"
+    		android:text="@string/common_ok"
     		/>
     		
     	<Button android:id="@+id_pick_sound_activity/Cancel"
     		android:layout_width="200px"
     		android:layout_height="70px"
     		android:layout_marginLeft="10dip"
-    		android:text="キャンセル"
+    		android:text="@string/common_cancel"
     		/>
     </LinearLayout>
     	

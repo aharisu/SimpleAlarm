@@ -69,8 +69,9 @@
 
 	    <Button
 	        android:id="@+id/dismiss"
-	        android:layout_width="52dip"
-	        android:layout_height="38dip"
+	        android:layout_width="50dip"
+	        android:layout_height="35dip"
+	        android:textSize="12sp"
 	        android:text="@string/alarm_alert_dismiss_text" />
         
 	</AbsoluteLayout>

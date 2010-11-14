@@ -22,7 +22,7 @@
     <activity android:name=".AlarmSystem.AlarmAlert"></activity>
     <activity android:name=".AlarmSystem.AlarmAlertFullScreen"></activity>
     <activity android:name="SetAlarmActivity"></activity>
-    <activity android:name=".AlarmSystem.SettingsActivity"></activity>
+    
     
     <provider android:authorities="aharisu.Misc.SimpleAlarm" android:name=".AlarmSystem.AlarmProvider"></provider>
     <receiver android:name=".AlarmSystem.AlarmInitReceiver">

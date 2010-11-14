@@ -127,8 +127,8 @@ public class AlarmReceiver extends BroadcastReceiver {
         // Use the alarm's label or the default label as the ticker text and
         // main text of the notification.
         Notification n = new Notification(R.drawable.stat_notify_alarm,
-                "アラーム", alarm.time);
-        n.setLatestEventInfo(context, "アラーム",
+                context.getResources().getText(R.string.default_label), alarm.time);
+        n.setLatestEventInfo(context, context.getResources().getText(R.string.default_label),
                 context.getString(R.string.alarm_notify_text),
                 pendingNotify);
         n.flags |= Notification.FLAG_SHOW_LIGHTS
@@ -161,8 +161,10 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         // Update the notification to indicate that the alert has been
         // silenced.
-        Notification n = new Notification(R.drawable.stat_notify_alarm, "アラーム", alarm.time);
-        n.setLatestEventInfo(context, "アラーム",
+        Notification n = new Notification(R.drawable.stat_notify_alarm,
+        		context.getResources().getText(R.string.default_label),
+        		alarm.time);
+        n.setLatestEventInfo(context, context.getResources().getText(R.string.default_label),
                 context.getString(R.string.alarm_alert_alert_silenced, timeout),
                 intent);
         n.flags |= Notification.FLAG_AUTO_CANCEL;

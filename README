@@ -1,0 +1,9 @@
+Galaxy S向けに作ったシンプル目覚ましアプリ
+
+レイアウトをGalaxy Sに向けに作ってるので他の機種ではずれる可能性アリ。
+
+機能が少ないので追加はご自由に。
+
+aharisu.Misc.SimpleAlarmパッケージはUIにかかわるコード。
+aharisu.Misc.SimpleAlarm.AlarmSystemパッケージはアラームシステムにかかわるコード。
+AlarmAlertFullScreenクラスがアラームが鳴った時に表示されるアクティビティクラス。
